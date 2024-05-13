@@ -1,0 +1,40 @@
+<!-- views/savedItems.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Items</title>
+    <link rel="stylesheet" href="/css/styles.css"> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="NavBarItems">
+        <a href="/" class="navbar-logo">Shoppal</a>
+        <div class="nav-menu">
+            <a href="/" class="nav-links"><i class="fas fa-home"></i>Home</a>
+            <a href="/saved-items" class="nav-links"><i class="fas fa-star"></i>Saved Items</a>
+            <a href="/about" class="nav-links"><i class="fas fa-info-circle"></i>About</a>
+        </div>
+    </div>
+    <!-- Banner -->
+    <div class="hero">
+        <img src="./assets/pexels-olly-974964.jpg" alt="Landing Image">
+        <div class="hero-text">
+            <h1>Your Saved Items</h1>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <h2>The Items you Have Saved are Below</h2>
+            <p>Click on the Unsave button to remove the item from your saved list</p>
+            <div id="savedItems"></div>
+        </div>
+
+        <div id="notification-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;"></div>
+    </div>
+
+    <script src="/js/client.js"></script>
+</body>
+</html>

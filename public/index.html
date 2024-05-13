@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="NavBarItems">
+        <a href="/" class="navbar-logo">Shoppal</a>
+        <div class="nav-menu">
+            <a href="/" class="nav-links"><i class="fas fa-home"></i>Home</a>
+            <a href="/saved-items" class="nav-links"><i class="fas fa-star"></i>Saved Items</a>
+            <a href="/about" class="nav-links"><i class="fas fa-info-circle"></i>About</a>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="hero">
+        <img src="./assets/pexels-olly-853151.jpg" alt="Landing Image">
+        <div class="hero-text">
+            <h1>Welcome to Shoppal!</h1>
+            <p>Browse the Catalogue Below</p>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <!-- Load Items Button -->
+        <div class="section">
+            <h2>View the Whole Catalogue</h2>
+            <p>Click on 'Load All Items' below to view the entire catalogue. Use Previous and Next to navigate through the items. Click on "Save" to add the item to your Saved Items cart.</p>
+            <button onclick="loadItems(1)">Load All Items</button>
+            <button onclick="loadItems(1)">|<<</button>
+            <button onclick="navigateItems(-1)">Previous</button>
+            <button onclick="navigateItems(1)">Next</button>
+            <button onclick="loadItems(totalPages)">>>|</button>
+            <select id="sortOrder" onchange="loadItems(1)">
+                <option value="default">Default Order</option>
+                <option value="asc">Price Low to High</option>
+                <option value="desc">Price High to Low</option>
+            </select>
+            <div id="itemDisplay"></div>
+        </div>
+
+        <!-- Add Item Form -->
+        <div class="section">
+            <h2>Add New Item</h2>
+            <p>Add a new item to the catalogue by filling out the form below.</p>
+            <input type="text" id="name" placeholder="Name">
+            <input type="text" id="type" placeholder="Type">
+            <input type="number" id="price" placeholder="Price">
+            <input type="number" id="shipping" placeholder="Shipping Cost">
+            <input type="text" id="description" placeholder="Description">
+            <input type="text" id="manufacturer" placeholder="Manufacturer">
+            <input type="text" id="image" placeholder="Image URL (optional)">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <!-- Update Item Form -->
+        <div class="section">
+            <h2>Update Item</h2>
+            <p>Update the name of an existing item in the catalogue.</p>
+            <input type="text" id="updateId" placeholder="Item ID">
+            <input type="text" id="updateName" placeholder="New Name">
+            <button onclick="updateItem()">Update Item</button>
+        </div>
+
+        <!-- Delete Item Form -->
+        <div class="section">
+            <h2>Delete Item</h2>
+            <p>Delete and item form the catalogue.</p>
+            <input type="text" id="deleteId" placeholder="Item ID">
+            <button onclick="deleteItem()">Delete Item</button>
+        </div>
+
+        <!-- Search Form -->
+        <div class="section">
+            <h2>Search Items</h2>
+            <p>Search for an item in the catalogue through the name of the item.</p>
+            <input type="text" id="searchQuery" placeholder="Enter search term">
+            <button onclick="searchItems()">Search</button>
+            <div id="searchResults"></div>
+        </div>
+
+        <div id="notification-container"></div>
+    </div>
+
+    <script src="js/client.js"></script>
+</body>
+</html>

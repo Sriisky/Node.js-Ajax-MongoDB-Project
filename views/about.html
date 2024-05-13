@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <title>About</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="NavBarItems">
+        <a href="/" class="navbar-logo">Shoppal</a>
+        <div class="nav-menu">
+            <a href="/" class="nav-links"><i class="fas fa-home"></i>Home</a>
+            <a href="/saved-items" class="nav-links"><i class="fas fa-star"></i>Saved Items</a>
+            <a href="/about" class="nav-links"><i class="fas fa-info-circle"></i>About</a>
+        </div>
+    </div>
+    <!-- Banner -->
+    <div class="hero">
+        <img src="./assets/pexels-lum3n-44775-351961.jpg" alt="Landing Image">
+        <div class="hero-text">
+            <h1>About This Project</h1>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="section">
+            <h2>General Description of this Application</h2>
+            <p>This assignment is a full-stack web application built using Node.js for the backend, with Express.js as the web framework to handle routing and server setup. 
+                The front end is built using HTML, CSS, and client-side JavaScript, enabling dynamic interaction with the backend through AJAX calls.
+            </p>
+            <br>
+            <p> When a user accesses the main page, index.html is served along with its associated static files.
+                client.js makes AJAX calls to the backend to request item data, which is then dynamically inserted into the page without requiring a full refresh.
+                Users can interact with the application by adding, updating, searching, or deleting items, with each action being sent to the server via AJAX calls, and the server responding with the appropriate data.
+                The server uses Mongoose to interact with the MongoDB Compass database, allowing CRUD operations to be performed on the item data.
+            </p>
+            <br>
+            <p> When the server starts (server.js), it connects to MongoDB and sets up routes for serving the application's pages and API endpoints.
+                When a user performs actions such as adding, updating, or deleting items, the front end sends these requests to the server's API routes (itemRoutes.js), which then interact with the database to fulfill the requests.
+                The application allows users to save items into a saved list, which is managed by the server's saved item routes (savedRoutes.js).
+                The application provides functionality to search for items by name and sort items by price. This is managed by the client-side JavaScript, which modifies the API request based on user input.
+            </p>
+            <br>
+            <p> The extra functionality I implemented on top of the core requirements includes the following: The saved items page
+                which allows the user to save items to a separate list, view the saved items, and unsave items from the list. The saved items are stored in a separate collection in the database.
+                I also implemented sorting functionality on the main page to sort items by price in ascending or descending order.
+                There is thorough error handling on the server and client side to ensure that the application behaves as expected and provides feedback to the user when an error occurs.
+                The UI also took some time and consideration.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Description of the Technologies Used</h2>
+            <p> Node.js: used to create the back-end server for the application.
+            </p>
+            <br>
+            <p> Express.js: used as the web framework to set up middleware to respond to HTTP Requests, define routing, and render pages back to the client.
+            </p>
+            <br>
+            <p> MongoDB Compass: used as the database to store item data. Includes the items and saveditems collections.
+            </p>
+            <br>
+            <p> Mongoose: used to interact with the MongoDB database, allowing CRUD operations to be performed on the item data.
+            </p>
+            <br>
+            <p> AJAX: used to make asynchronous requests to the server to fetch data without requiring a full page refresh.
+            </p>
+            <br>
+            <p> HTML, CSS, JavaScript: used to create the front-end user interface and interact with the server through AJAX calls.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Description of Weaknesses of the Project</h2>
+            <p>The UI is not fully responsive for varying device sizes.
+                There is no security practices in place. CORS configuration would protect the application better.
+                The application does not have user authentication or authorization, which could be implemented to restrict access to certain features.
+                Frontend uses vanilla JavaScript, which could be improved by using a front-end framework such as React to make the user interface more reactive.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Description of Alternative Implementations</h2>
+            <p>An alternative implementation might involve using a front-end framework such as React to 
+                make the user interface more reactive and reduce server load by handling some logic client-side.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
